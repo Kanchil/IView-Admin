@@ -6,7 +6,8 @@ import router from './router'
 // 导入 iView
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'    // 使用 CSS
-import '@/style/index.scss'
+// 导入Mock
+import '@/mock'
 
 Vue.config.productionTip = false
 Vue.use(iView)
