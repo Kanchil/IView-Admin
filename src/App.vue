@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 @import '~normalize.css/normalize.css';
 @import './styles/index.less';
 </style>

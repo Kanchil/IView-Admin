@@ -2,13 +2,13 @@
     <div class="layout" :class="{'layout-hide-text': spanLeft < 3}">
         <Row>
             <Col :span="spanLeft" class="layout-menu-left left-menu">
-            <Menu active-name="1"  width="auto">
+            <Menu active-name="1" width="auto">
                 <!-- <div class="layout-logo-left"></div> -->
                 <MenuItem name="1">
-                    <router-link to="/bmap">
-                        <Icon type="ios-navigate" :size="iconSize"></Icon>
-                        <span class="layout-text">百度地图</span>
-                    </router-link>
+                <router-link to="/bmap">
+                    <Icon type="ios-navigate" :size="iconSize"></Icon>
+                    <span class="layout-text">百度地图</span>
+                </router-link>
                 </MenuItem>
             </Menu>
             </Col>
@@ -18,14 +18,14 @@
                     <Icon type="navicon" size="32"></Icon>
                 </Button>
             </div>
-            <div class="layout-breadcrumb">
-                <Breadcrumb>
-                    <BreadcrumbItem href="#">首页</BreadcrumbItem>
-                    <BreadcrumbItem href="#">应用中心</BreadcrumbItem>
-                    <BreadcrumbItem>某应用</BreadcrumbItem>
-                </Breadcrumb>
-            </div>
             <div class="layout-content">
+                <div class="layout-breadcrumb">
+                    <Breadcrumb>
+                        <BreadcrumbItem href="#">首页</BreadcrumbItem>
+                        <BreadcrumbItem href="#">应用中心</BreadcrumbItem>
+                        <BreadcrumbItem>某应用</BreadcrumbItem>
+                    </Breadcrumb>
+                </div>
                 <div class="layout-content-main">
                     <router-view></router-view>
                 </div>
@@ -84,8 +84,9 @@ export default {
 }
 
 .layout-breadcrumb {
-    padding: 10px 15px 0;
+    padding: 10px 15px;
     text-align: left;
+    border-bottom: 1px solid #e9eaec;
 }
 
 .layout-content {
@@ -97,7 +98,7 @@ export default {
 }
 
 .layout-content-main {
-    padding: 10px;
+    padding: 0 10px 10px;
 }
 
 .layout-copy {
