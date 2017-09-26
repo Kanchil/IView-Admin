@@ -2,8 +2,8 @@
     <div class="layout" :class="{'layout-hide-text': spanLeft < 3}">
         <Row>
             <Col :span="spanLeft" class="layout-menu-left left-menu">
-            <Menu active-name="1" theme="dark" width="auto">
-                <div class="layout-logo-left"></div>
+            <Menu active-name="1"  width="auto">
+                <!-- <div class="layout-logo-left"></div> -->
                 <MenuItem name="1">
                     <router-link to="/bmap">
                         <Icon type="ios-navigate" :size="iconSize"></Icon>
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="layout-copy">
-                2011-2016 &copy; TalkingData
+                2017 &copy; Kanchil
             </div>
             </Col>
         </Row>
@@ -90,7 +90,6 @@ export default {
 
 .layout-content {
     position: relative;
-    min-height: 100%;
     margin: 15px;
     overflow: hidden;
     background: #fff;
@@ -108,7 +107,7 @@ export default {
 }
 
 .layout-menu-left {
-    background: #464c5b;
+    background: #fff;
 }
 
 .layout-header {

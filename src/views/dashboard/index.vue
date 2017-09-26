@@ -1,10 +1,11 @@
 <template>
   <div class="app-container">
-    首页</div>
+    首页
+  </div>
 </template>
 
 <script>
-import axios from 'axios'
+import {getMenuList} from '@/api/system/menu'
 export default {
   name: 'dashboard',
   data() {
@@ -13,10 +14,7 @@ export default {
     }
   },
   created() {
-    axios({
-      url: 'http://localhost/getMenu',
-      method: 'get'
-    }).then(data=>{
+    getMenuList().then(data => {
       console.log(data)
     })
   }

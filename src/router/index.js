@@ -7,23 +7,19 @@ import Dashboard from '@/views/dashboard'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: '首页',
-      redirect: '/dashboard',
-      component: Layout,
-      children: [
-        {
-          path: '/dashboard',
-          name: 'dashboard',
-          component: Dashboard
-        }, {
-          path: '/bmap',
-          name: '百度地图',
-          component: BMap
-        }
-      ]
-    }
-  ]
+  routes: [{
+    path: '/',
+    name: '首页',
+    redirect: '/dashboard',
+    component: Layout,
+    children: [{
+      path: '/dashboard',
+      name: 'dashboard',
+      component: Dashboard
+    }, {
+      path: '/bmap',
+      name: '百度地图',
+      component: BMap
+    }]
+  }]
 })

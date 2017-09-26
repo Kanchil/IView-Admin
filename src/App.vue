@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
     <router-view></router-view>
   </div>
 </template>
@@ -13,5 +12,5 @@ export default {
 
 <style lang="scss">
 @import '~normalize.css/normalize.css';
-@import './styles/index.scss';
+@import './styles/index.less';
 </style>
