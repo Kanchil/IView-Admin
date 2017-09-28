@@ -1,10 +1,11 @@
 <template>
-    <div class="main-container">
+    <div class="main-content">
         <nav-bar></nav-bar>
         <transition name="fade" mode="out-in">
             <!-- <router-view :key="key"></router-view> -->
             <router-view></router-view>
         </transition>
+        <div class="copyright">CopyRight &copy; 2017 Kanchil </div>
     </div>
 </template>
 <script>
