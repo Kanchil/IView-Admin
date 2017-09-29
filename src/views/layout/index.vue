@@ -2,9 +2,6 @@
     <div class="container">
         <div class="main-header">
             <div class="logo"><h2>后台管理中心</h2></div>
-            <Button type="text" @click="toggleClick">
-                <Icon type="navicon" size="32"></Icon>
-            </Button>
         </div>
         <div class="side-container">
             <side-menu></side-menu>
@@ -25,19 +22,24 @@ export default {
     },
     data() {
         return {
-                
+            open:false 
         }
     },
     computed: {
 
     },
     methods: {
-        toggleClick(){
-            console.log('ss')
-        }
+        
     }
 }
 </script>
 <style scoped>
-
+.hamburger{
+    transform: rotate(0deg);
+    transition: .38s;
+    transform-origin: 50% 50%;
+}
+.hamburger.active {
+    transform: rotate(90deg);
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <Menu theme="light" :open-names="['1']" accordion style="width:100%;">
+    <Menu theme="light" :open-names="['1']" accordion style="width:auto;">
         <Submenu name="1">
             <template slot="title">
                 <Icon type="ios-paper"></Icon>

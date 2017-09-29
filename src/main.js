@@ -6,6 +6,7 @@ import router from './router'
 // 导入 iView
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'    // 使用 CSS
+import 'colors.css'
 // 导入Mock
 import '@/mock'
 
