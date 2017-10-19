@@ -3,7 +3,8 @@ import Router from 'vue-router'
 import BMap from '@/views/BMap'
 import Layout from '@/views/layout'
 import Dashboard from '@/views/dashboard'
-
+import Html2canvas from '@/views/html2canvas'
+import GooFlow from '@/views/gooFlow'
 Vue.use(Router)
 
 export default new Router({
@@ -20,6 +21,16 @@ export default new Router({
       path: '/bmap',
       name: '百度地图',
       component: BMap
+    },
+    {
+      path: '/html2canvas',
+      name: 'html2canvas',
+      component: Html2canvas
+    },
+    {
+      path: '/gooFlow',
+      name: 'gooFlow',
+      component: GooFlow
     }]
   }]
 })
