@@ -8,7 +8,7 @@ import iView from 'iview'
 import 'iview/dist/styles/iview.css'    // 使用 CSS
 import 'colors.css'
 // 导入Mock
-import '@/mock'
+// import '@/mock'
 
 Vue.config.productionTip = false
 Vue.use(iView)

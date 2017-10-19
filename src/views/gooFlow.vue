@@ -1,16 +1,20 @@
 <template>
     <div class="app-container">
         <div id="flow"></div>
-        <Button @click="exportImg">生成图片</Button>
+        <img id="img" :src="logo" alt="">
+        <Button @click="exportImg" type="primary">生成图片</Button>
+        <Button @click="exportImg2" type="success">生成图片2</Button>
         <Row>
             <Col span="24">
-                <div id="canvas-container" class="canvas-container"></div>
+            <div id="canvas-container" class="canvas-container"></div>
             </Col>
         </Row>
     </div>
 </template>
 <script>
 import html2canvas from 'html2canvas'
+import domtoimage from 'dom-to-image';
+import logo from '@/assets/logo.png'
 import '@/../static/flow/GooFlow';
 var property = {
     width: 1200,
@@ -35,7 +39,9 @@ export default {
     name: '',
     components: {},
     data() {
-        return {}
+        return {
+            logo:logo
+        }
     },
     created() {
         console.log(html2canvas)
@@ -52,8 +58,23 @@ export default {
                 let canvasContainer = document.getElementById('canvas-container');
                 canvasContainer.appendChild(canvas);
                 var url = canvas.toDataURL();
-                console.log('url=>',url)
+                console.log('url=>', url)
             })
+        },
+        exportImg2() {
+            console.log('export2');
+            let node = document.getElementById('flow');
+            console.log('node',node)
+            domtoimage.toPng(node)
+                .then(function(dataUrl) {
+                    console.log('dataurl=>',dataUrl)
+                    var img = new Image();
+                    img.src = dataUrl;
+                    let canvasContainer = document.getElementById('canvas-container');
+                    canvasContainer.appendChild(img);
+                }).catch(function(error) {
+                    console.error('oops, something went wrong!', error);
+                });
         }
     }
 }
