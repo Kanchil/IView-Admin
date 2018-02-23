@@ -5,6 +5,8 @@ import Layout from '@/views/layout'
 import Dashboard from '@/views/dashboard'
 import Html2canvas from '@/views/html2canvas'
 import GooFlow from '@/views/gooFlow'
+import vueQuill from '@/views/vueQuill'
+import JsZip from '@/views/jszip/index'
 Vue.use(Router)
 
 export default new Router({
@@ -23,6 +25,11 @@ export default new Router({
       component: BMap
     },
     {
+      path: '/jszip',
+      name: '',
+      component: JsZip
+    },
+    {
       path: '/html2canvas',
       name: 'html2canvas',
       component: Html2canvas
@@ -31,6 +38,11 @@ export default new Router({
       path: '/gooFlow',
       name: 'gooFlow',
       component: GooFlow
-    }]
+    }, {
+      path: '/vueQuill',
+      name: 'vueQuill',
+      component: vueQuill
+    }
+    ]
   }]
 })

@@ -65,7 +65,7 @@ export default {
             console.log('export2');
             let node = document.getElementById('flow');
             console.log('node',node)
-            domtoimage.toPng(node)
+            domtoimagedomtoimage.toPng(node)
                 .then(function(dataUrl) {
                     console.log('dataurl=>',dataUrl)
                     var img = new Image();

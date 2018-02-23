@@ -14,9 +14,9 @@ export default {
     }
   },
   created() {
-    getMenuList().then(data => {
-      console.log(data)
-    })
+//    getMenuList().then(data => {
+//      console.log(data)
+//    })
   }
 }
 </script>
