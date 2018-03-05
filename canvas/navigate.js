@@ -17,3 +17,5 @@ console.log(body.hobby === gril.hobby)
 // 自己的原型，所以形成了一条原型链（prototype chain）。所有一切的对象的原型顶端，收拾Object.prototype，即Object构造函数的prototype
 // 属性指向的那个对象。
 // 当然，Object.prototype对象也有自己的原型对象，那就是没有任何属性和方法的null对象，而null对象也没有自己的原型
+// 原型对象的用途是为每个实例对象存储共享的方法和属性，它仅仅是一个普通对象。并且所有的实例是共享同一个
+// 原型对象，因此有别于实例方法和属性，原型对象仅有一份

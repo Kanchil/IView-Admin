@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo2</title>
+</head>
+<body>
+<canvas id="canvas" width="200" height="100"></canvas>
+</body>
+<script>
+  var c = document.getElementById('canvas')
+  var ctx = c.getContext('2d')
+  ctx.beginPath()
+  ctx.moveTo(40, 20)
+  ctx.lineTo(120, 70)
+  ctx.arcTo(120, 90, 100, 90, 20)
+  ctx.lineTo(20, 40)
+  ctx.arcTo(20, 20, 40, 20, 20)
+  ctx.stroke()
+</script>
+</html>
