@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo25</title>
+</head>
+<body>
+<div id="legned">loading...</div>
+</body>
+<script src="lufylegend-1.10.1.js"></script>
+<script>
+  var field, loader, bitmapup, bitmapover;
+  init(50, 'legned', 500, 350, main)
+  function main() {
+    loader = new LLoader()
+    loader.addEventListener(LEvent.COMPLETE, loadUp)
+    loader.load('bt1.png', 'bitmapData')
+  }
+  function loadUp(event) {
+    bitmapup = new LBitmap(new LBitmapData(loader.content))
+    loader = new LLoader()
+    loader.addEventListener(LEvent.COMPLETE, loadOver)
+    loader.load('bt2.png', 'bitmapData')
+  }
+  function loadOver() {
+    bitmapover = new LBitmap(new LBitmapData(loader.content))
+    var layer = new LSprite()
+    addChild(layer)
+    field = new LTextField()
+    field.text = 'wait Click!'
+    layer.addChild(field)
+    var testButton = new LButton(bitmapup, bitmapover)
+    testButton.y = 50
+    layer.addChild(testButton)
+    testButton.addEventListener(LMouseEvent.MOUSE_DOWN, downshow)
+  }
+  function downshow() {
+    field.text = 'testButton Click!'
+  }
+</script>
+</html>

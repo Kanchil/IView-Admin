@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo17</title>
+</head>
+<body>
+<div id="legned">loading...</div>
+</body>
+<script src="lufylegend-1.10.1.js"></script>
+<script>
+  init(50, 'legned', 500, 350, main)
+  function main() {
+    var graphics = new LGraphics()
+    addChild(graphics)
+    graphics.drawRect(1, '#000', [50, 50, 100, 100])
+    graphics.drawRect(1, '#000', [170, 50, 100, 100], true, '#ccc')
+  }
+</script>
+</html>

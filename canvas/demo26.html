@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo26</title>
+</head>
+<body>
+<div id="legned">loading...</div>
+</body>
+<script src="lufylegend-1.10.1.js"></script>
+<script>
+  var loader, layer, anime;
+  init(50, 'legned', 500, 350, main)
+  function main() {
+    loader = new LLoader()
+    loader.addEventListener(LEvent.COMPLETE, loadBitmapdata)
+    loader.load('games.jpg', 'bitmapData')
+  }
+  function loadBitmapdata(event) {
+    var bitmapdata = new LBitmapData(loader.content, 0, 0, 62.6, 62.6)
+    var list = LGlobal.divideCoordinate(313, 1000, 16, 5)
+    layer = new LSprite()
+    addChild(layer)
+    anime = new LAnimation(layer, bitmapdata, list)
+    layer.addEventListener(LEvent.ENTER_FRAME, onframe)
+  }
+  function onframe() {
+    var action = anime.getAction()
+    switch (action[0]) {
+      case 0:
+        layer.y += 5
+        if (layer.y >= 200) {
+          anime.setAction(2)
+        }
+        break
+      case 1:
+        layer.x -= 5
+        if (layer.x <= 0) {
+          anime.setAction(0)
+        }
+        break
+      case 2:
+        layer.x += 5
+        if (layer.x >= 200) {
+          anime.setAction(3)
+        }
+        break
+      case 3:
+        layer.y -= 5
+        if (layer.y <= 0) {
+          anime.setAction(1)
+        }
+        break
+    }
+    anime.onframe()
+  }
+</script>
+</html>

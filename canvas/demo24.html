@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo24</title>
+</head>
+<body>
+<div id="legned">loading...</div>
+</body>
+<script src="lufylegend-1.10.1.js"></script>
+<script>
+  var field;
+  init(50, 'legned', 500, 350, main)
+  function main() {
+    var layer = new LSprite()
+    layer.graphics.drawRect(1, '#ccc', [0, 0, 300, 300], true, '#ccc')
+    addChild(layer)
+    field = new LTextField()
+    field.text = '0'
+    layer.addChild(field)
+    layer.addEventListener(LEvent.ENTER_FRAME, onframe)
+  }
+  function onframe() {
+    field.text = parseInt(field.text) + 1
+  }
+</script>
+</html>

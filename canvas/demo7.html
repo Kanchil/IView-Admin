@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo7</title>
+</head>
+<body>
+<canvas id="canvas" width="400" height="400"></canvas>
+</body>
+<script>
+  var c = document.getElementById('canvas')
+  var ctx = c.getContext('2d')
+  var image = new Image()
+  image.src = './bg.png'
+  image.onload = function () {
+    ctx.drawImage(image, 10, 10)
+    var imageData = ctx.getImageData(50, 50, 200, 200)
+    var imageData01 = ctx.createImageData(imageData)
+    for (i = 0; i < imageData01.width*imageData01.height*4;i+=4){
+      imageData01.data[i+0] = 255
+      imageData01.data[i+1] = 0
+      imageData01.data[i+2] = 0
+      imageData01.data[i+3] = 255
+    }
+    ctx.putImageData(imageData01, 10, 260)
+    var imageData02 = ctx.createImageData(100, 100)
+    for (i = 0; i < imageData02.width*imageData02.height*4;i+=4){
+      imageData02.data[i+0] = 255
+      imageData02.data[i+1] = 0
+      imageData02.data[i+2] = 0
+      imageData02.data[i+3] = 155
+    }
+    ctx.putImageData(imageData02)
+  }
+</script>
+</html>
